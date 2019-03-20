@@ -61,3 +61,11 @@ BEGIN
 	SELECT * FROM COutcomes WHERE ProyectNumber = _ProyectNumber;
 END//
 
+CREATE PROCEDURE updateProyect(
+	IN _OldProyectNumber INT(8),
+	IN _NewProyectNumber INT(8)
+	IN _ProyectTitular VARCHAR(255)
+)
+BEGIN 
+	UPDATE CProyects SET ProyectNumber = _NewProyectNumber, ProyectTitular = _ProyectTitular WHERE ProyectNumber = _OldProyectNumber;
+END//
