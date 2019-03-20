@@ -39,3 +39,25 @@ CREATE TABLE COutcomes(
 	TransferDate DATE,
 	FOREIGN KEY (ProyectNumber) REFERENCES CProyects(ProyectNumber) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+DELIMITER //
+
+CREATE PROCEDURE getProyects()
+BEGIN
+	SELECT * FROM CProyects;
+END//
+
+CREATE PROCEDURE getIncomes(
+	IN _ProyectNumber INT(8)
+)
+BEGIN 
+	SELECT * FROM CIncomes WHERE ProyectNumber = _ProyectNumber;
+END//
+
+CREATE PROCEDURE getOutcomes(
+	IN _ProyectNumber INT(8)
+)
+BEGIN
+	SELECT * FROM COutcomes WHERE ProyectNumber = _ProyectNumber;
+END//
+
