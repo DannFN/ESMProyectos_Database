@@ -57,9 +57,11 @@ CREATE PROCEDURE addConacytProyect(
 BEGIN
 	INSERT INTO CProyects (
 		ProyectNumber, 
+		ProyectName
 		ProyectTitular
 	) VALUES (
-		_ProyectNumber, 
+		_ProyectNumber,
+		_ProyectName 
 		_ProyectTitular
 	); 
 END//
